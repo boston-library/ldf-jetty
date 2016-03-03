@@ -1,0 +1,20 @@
+# Solr instance data
+solr/data/*
+solr/*/data/*
+
+# Fedora dev instance data
+fcrepo4-data
+
+# Logs
+logs/*
+derby.log
+jettywrapper.log
+velocity.log*
+*.log
+
+# Blazegraph data files
+*.jnl
+
+#Temp files
+*~
+~*
