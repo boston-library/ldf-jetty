@@ -36,15 +36,29 @@ It is recommended that you populate Blazegraph with LoC for terms to work. To do
 * Run the following command from that extraction directory:
     curl -H 'Content-Type: text/turtle' --upload-file subjects-skos-20140306.nt -X POST "http://localhost:8985/blazegraph/sparql?context-uri=http://id.loc.gov/static/data/authoritiessubjects.nt.skos.zip"
 
-### Using ldf-wrapper
+### Using ldfwrapper
 
 For use within your application's Rails directory.
 
     add 'ldf-wrapper' to your gemfile
-    rake jetty:install
-    rake jetty:start
 
-See [jettywrapper](https://github.com/boston-library/ldf-wrapper) for more information regarding configuration and usage.
+Download and install the instance:
+
+    $ rake ldfjetty:install
+
+Whenever you want to start it up, do:
+
+    $ rake ldfjetty:start
+
+Shut it down with:
+
+    $ rake ldfjetty:stop
+
+To reinstall a fresh copy, you can either remove the "ldf-jetty" directory or do "rake jetty:clean" and then rerun:
+
+    $ rake ldfjetty:install
+
+See [ldfwrapper](https://github.com/boston-library/ldf-wrapper) for more information regarding configuration and usage.
 Port numbers and other java options maybe configured via the gem.
 
 ### Interaction
