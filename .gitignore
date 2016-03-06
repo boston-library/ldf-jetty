@@ -6,11 +6,11 @@ solr/*/data/*
 fcrepo4-data
 
 # Logs
-logs/*
+#logs/*
 derby.log
 jettywrapper.log
 velocity.log*
-*.log
+*.log*
 
 # Blazegraph data files
 *.jnl
@@ -18,3 +18,6 @@ velocity.log*
 #Temp files
 *~
 ~*
+
+#Rubymine directory
+.idea

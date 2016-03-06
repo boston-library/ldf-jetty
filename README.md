@@ -29,21 +29,22 @@ You can also change the port jetty starts on by editing the file etc/jetty.xml a
 
 It is recommended that you populate Blazegraph with LoC for terms to work. To do this:
 
-* Download the latest subjects vocab from: [http://id.loc.gov/download/]http://id.loc.gov/download/ (the nt version of “LC Subject Headings (SKOS/RDF only)”)
+* Download the latest subjects vocab from: [http://id.loc.gov/download/](http://id.loc.gov/download/) (the nt version of “LC Subject Headings (SKOS/RDF only)”)
 
 *Extract the above download into a directory.
 
 * Run the following command from that extraction directory:
-    curl -H 'Content-Type: text/turtle' --upload-file subjects-skos-20140306.nt -X POST "http://localhost:8085/blazegraph/sparql?context-uri=http://id.loc.gov/static/data/authoritiessubjects.nt.skos.zip"
+    curl -H 'Content-Type: text/turtle' --upload-file subjects-skos-20140306.nt -X POST "http://localhost:8985/blazegraph/sparql?context-uri=http://id.loc.gov/static/data/authoritiessubjects.nt.skos.zip"
 
-### Using jettywrapper
+### Using ldf-wrapper
 
-For use within your Hydra application's Rails directory.
+For use within your application's Rails directory.
 
-    Rename “ldp-jetty” to “jetty”
+    add 'ldf-wrapper' to your gemfile
+    rake jetty:install
     rake jetty:start
 
-See [jettywrapper](https://github.com/projecthydra/jettywrapper) for more information regarding configuration and usage.
+See [jettywrapper](https://github.com/boston-library/ldf-wrapper) for more information regarding configuration and usage.
 Port numbers and other java options maybe configured via the gem.
 
 ### Interaction
