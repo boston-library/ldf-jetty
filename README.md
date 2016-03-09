@@ -25,16 +25,16 @@ This is a copy of jetty with the needed applications for running Linked Data Fra
 
 You can also change the port jetty starts on by editing the file etc/jetty.xml and changing this line to indicate a different port number:
 
-    <Set name="port"><SystemProperty name="jetty.port" default="8985"/></Set>
+    <Set name="port"><SystemProperty name="jetty.port" default="8988"/></Set>
 
 It is recommended that you populate Blazegraph with LoC for terms to work. To do this:
 
 * Download the latest subjects vocab from: [http://id.loc.gov/download/](http://id.loc.gov/download/) (the nt version of “LC Subject Headings (SKOS/RDF only)”)
 
-*Extract the above download into a directory.
+* Extract the above download into a directory.
 
 * Run the following command from that extraction directory:
-    curl -H 'Content-Type: text/turtle' --upload-file subjects-skos-20140306.nt -X POST "http://localhost:8985/blazegraph/sparql?context-uri=http://id.loc.gov/static/data/authoritiessubjects.nt.skos.zip"
+    curl -H 'Content-Type: text/turtle' --upload-file subjects-skos-20140306.nt -X POST "http://localhost:8988/blazegraph/sparql?context-uri=http://id.loc.gov/static/data/authoritiessubjects.nt.skos.zip"
 
 ### Using ldfwrapper
 
@@ -65,13 +65,13 @@ Port numbers and other java options maybe configured via the gem.
 
 When jetty is finished initializing itself, Blazegraph is available at
 
-* [http://localhost:8985/blazegraph/](http://localhost:8985/blazegraph/)
+* [http://localhost:8988/blazegraph/](http://localhost:8988/blazegraph/)
 
 and Marmotta is available at
 
-* [http://localhost:8985/marmotta/](http://localhost:8985/marmotta/)
+* [http://localhost:8988/marmotta/](http://localhost:8988/marmotta/)
 
 You can see a list of all installed applications at
 
-* [http://localhost:8985](http://localhost:8985)
+* [http://localhost:8988](http://localhost:8988)
 
